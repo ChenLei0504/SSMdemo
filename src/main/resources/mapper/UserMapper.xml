@@ -3,8 +3,13 @@
 <!--这里的namespace必须和是对应的mapper.java的地址-->
 <mapper namespace="com.example.ssmdemo.user.dao.UserMapper" >
 
+    <resultMap id="userMap" type="com.example.ssmdemo.entity.User">
+        <result column="id" property="id"></result>
+        <result property="userName" column="userName"></result>
+        <result column="password" property="userPassword"></result>
+    </resultMap>
 
-    <select id="getUserList" resultType="com.example.ssmdemo.entity.User">
+    <select id="getUserList" resultMap="userMap">
         select * from user;
     </select>
 </mapper>

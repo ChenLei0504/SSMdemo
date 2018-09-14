@@ -1,5 +1,8 @@
 package com.example.ssmdemo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -9,8 +12,26 @@ import lombok.Data;
  * @date 2018-09-13
  */
 @Data
+//表名
+@TableName("user")
 public class User {
-    private int id;
-    private String user_name;
-    private String user_password;
+    /**
+     * 主键
+     */
+    @TableId("id")
+    private String id;
+
+    /**
+     * 字段userName
+     * 属性userName
+     */
+    @TableField("userName")
+    private String userName;
+
+    /**
+     * 字段password
+     * 属性userPassword
+     */
+    @TableField(value = "password")
+    private String userPassword;
 }
